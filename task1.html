@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects and Strings</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+const myself = {
+    name: "Uma",
+    age: 27,
+    occupation: "civil engineer",
+    favoriteColor: "yellow",
+    favoriteFood: "Biryani",
+    greet: function() {
+        console.log(`Hello, I'm ${this.name} and I'm ${this.age} years old.`);
+    }
+};
+const favoritePerson = {
+    name: "amrutha",
+    age: 24,
+    occupation: "Developer",
+    favoriteColor: "green",
+    favoriteFood: "pizza",
+    greet: function() {
+        console.log(`Hello, I'm ${this.name} and I'm ${this.age} years old.`);
+    }
+};
+
+console.log(myself.name);
+console.log(myself['age']);
+
+myself.greet();
+favoritePerson.greet();
+
+const { name: myName, age: myAge, occupation: myOccupation } = myself;
+console.log(myName, myAge, myOccupation);
+
+const { name: favPersonName, age: favPersonAge, occupation: favPersonOccupation } = favoritePerson;
+console.log(favPersonName, favPersonAge, favPersonOccupation);
+
+for (let key in myself) {
+    console.log(`${key}: ${myself[key]}`);
+}
+const myFavoriteFood = myself.favoriteFood;
+for (let i = 0; i < myFavoriteFood.length; i++) {
+    console.log(myFavoriteFood[i]);
+}
+
+const colors = ["red", "green", "blue"];
+for (let color of colors) {
+    console.log(color);
+}
+
+
+</script>
+</body>
+</html>
